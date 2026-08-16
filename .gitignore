@@ -1,0 +1,33 @@
+# Generated build products and third-party fetches
+/build/
+/dist/
+/installer/Output/
+
+# Local IDE and tool state
+/.vs/
+/.vscode/
+/.idea/
+*.user
+*.suo
+*.vcxproj.user
+*.pdb
+*.obj
+*.ilk
+*.exp
+*.lib
+*.dll
+*.exe
+
+# Local package and test artifacts
+/release/
+/screenshots/private/
+
+# Never commit user configuration or credentials
+*.token
+*.secret
+*.credentials
+*-profiles-*.ini
+tiktok-live-obs-bridge.ini
+tiktok-live-obs-bridge-profiles.ini
+aitum-tiktok-bridge.ini
+aitum-tiktok-bridge-profiles.ini
