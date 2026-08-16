@@ -84,6 +84,16 @@ Bug reports and improvements are welcome. Please start with [CONTRIBUTING.md](CO
 
 Security-sensitive reports belong in [SECURITY.md](SECURITY.md), not in a public issue.
 
+### Support the project
+
+If TikTok Live OBS Bridge helps your stream and you would like to support its maintenance, you can leave a small tip on Ko-fi. It is completely optional, but always appreciated.
+
+<p align="center">
+  <a href="https://ko-fi.com/smile_4_meee">
+    <img src="docs/assets/kofi-support.gif" alt="Support TikTok Live OBS Bridge on Ko-fi" width="760">
+  </a>
+</p>
+
 ## License
 
 Copyright © 2026 TikTok Live OBS Bridge Contributors.
