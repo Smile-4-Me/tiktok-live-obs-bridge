@@ -12,15 +12,23 @@ It is a community project, not a company product. Please read the information be
 
 ## What it does
 
-- Keeps multiple local TikTok profile configurations in one OBS installation.
-- Connects a profile through Streamlabs Desktop, a browser login, or a token you provide.
-- Shows whether an account appears ready for PC LIVE access.
-- Creates and ends TikTok LIVE sessions, including stream title, game category, and 18+ request.
-- Can update a selected Aitum Stream Suite output with the generated stream URL and key.
-- Can also be used without Aitum: copy the generated credentials into another streaming workflow.
-- Prevents two profiles from reserving the same Aitum output or TikTok account at the same time.
-- Checks whether Aitum actually started an output and cleans up a newly created session when it did not.
-- Recovers cautiously after OBS is closed during a LIVE session.
+✓ Keeps multiple local TikTok profile configurations in one OBS installation.
+
+✓ Connects a profile through Streamlabs Desktop, a browser login, or a token you provide.
+
+✓ Shows whether an account appears ready for PC LIVE access.
+
+✓ Creates and ends TikTok LIVE sessions, including stream title, game category, and 18+ request.
+
+✓ Can update a selected Aitum Stream Suite output with the generated stream URL and key.
+
+✓ Can also be used without Aitum: copy the generated credentials into another streaming workflow.
+
+✓ Prevents two profiles from reserving the same Aitum output or TikTok account at the same time.
+
+✓ Checks whether Aitum actually started an output and cleans up a newly created session when it did not.
+
+✓ Recovers cautiously after OBS is closed during a LIVE session.
 
 ## Important boundaries
 
