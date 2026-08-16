@@ -62,25 +62,25 @@ For manual installation and update behavior, read [docs/INSTALLING.md](docs/INST
 
 ## How it works
 
-<table>
+<table width="100%">
   <tr>
     <td width="50%" valign="top" align="center">
       <strong>1. Connect your TikTok account</strong><br><br>
-      <img src="docs/assets/how-it-works-01-connect-account.png" alt="Connect a TikTok account through Streamlabs" width="360">
+      <img src="docs/assets/how-it-works-01-connect-account.png" alt="Connect a TikTok account through Streamlabs" width="400">
     </td>
     <td width="50%" valign="top" align="center">
       <strong>2. Get your TikTok LIVE access</strong><br><br>
-      <img src="docs/assets/how-it-works-02-pc-live-access.png" alt="Apply for TikTok PC LIVE access" width="360">
+      <img src="docs/assets/how-it-works-02-pc-live-access.png" alt="Apply for TikTok PC LIVE access" width="400">
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top" align="center">
       <strong>3. Go live!</strong><br><br>
-      <img src="docs/assets/how-it-works-03-go-live.png" alt="Create a TikTok LIVE session and start streaming" width="360">
+      <img src="docs/assets/how-it-works-03-go-live.png" alt="Create a TikTok LIVE session and start streaming" width="400">
     </td>
     <td width="50%" valign="top" align="center">
       <strong>4. Stream with as many TikTok accounts as you like</strong><br><br>
-      <img src="docs/assets/how-it-works-04-multiple-accounts.png" alt="Manage multiple TikTok accounts in one OBS installation" width="360">
+      <img src="docs/assets/how-it-works-04-multiple-accounts.png" alt="Manage multiple TikTok accounts in one OBS installation" width="400">
     </td>
   </tr>
 </table>
