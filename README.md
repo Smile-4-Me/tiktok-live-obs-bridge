@@ -90,7 +90,7 @@ If TikTok Live OBS Bridge helps your stream and you would like to support its ma
 
 <p align="center">
   <a href="https://ko-fi.com/smile_4_meee">
-    <img src="docs/assets/kofi-support.gif" alt="Support TikTok Live OBS Bridge on Ko-fi" width="760">
+    <img src="https://media.giphy.com/media/K7gPh3p71iAK8NwkhO/giphy.gif" alt="Thanks for your support" width="160">
   </a>
 </p>
 
