@@ -10,8 +10,6 @@ TikTok Live OBS Bridge was built because repeatedly opening a separate tool, cop
 
 It is a community project, not a company product. Please read the information below before using it for an important stream.
 
-![Illustrated dock overview with fictional data](docs/assets/dock-overview.svg)
-
 ## What it does
 
 - Keeps multiple local TikTok profile configurations in one OBS installation.
