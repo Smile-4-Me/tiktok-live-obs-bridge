@@ -8,7 +8,7 @@
 
 TikTok Live OBS Bridge was built because repeatedly opening a separate tool, copying a stream URL and key, and pasting both into an OBS setup is tedious. It keeps that workflow close to OBS while leaving the streamer in control.
 
-It is a community project, not a company product. Please read the information below before using it for an important stream.
+It is a community project, not a company product. Please read the information below before using it.
 
 ## What it does
 
