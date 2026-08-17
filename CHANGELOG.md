@@ -2,6 +2,16 @@
 
 All notable changes are documented here. This project follows the spirit of [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and uses semantic versioning where practical.
 
+## [1.0.1] - 2026-08-17
+
+### Added
+
+- Full Turkish dock translation.
+
+### Fixed
+
+- The dock now reads OBS' active locale directly, allowing every bundled translation to be selected correctly.
+
 ## [1.0.0] - 2026-08-16
 
 ### Added
