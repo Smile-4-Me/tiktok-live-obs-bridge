@@ -104,8 +104,6 @@ This project exists because other projects made the problem understandable:
 - [Loukious/StreamLabsTikTokStreamKeyGenerator](https://github.com/Loukious/StreamLabsTikTokStreamKeyGenerator) — the GPL-3.0 reference project whose observed flow and ideas informed this implementation. Thank you, Loukious.
 - [OBS Studio](https://obsproject.com/) — the broadcasting platform this plugin extends.
 - [Aitum Stream Suite](https://aitum.tv/) — optional output management integration. This project does not bundle, modify, or represent Aitum.
-- [curl](https://curl.se/) — HTTPS transport, linked under the curl license.
-- Qt — the UI toolkit supplied by OBS in the supported runtime.
 
 See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for licensing and attribution details.
 
