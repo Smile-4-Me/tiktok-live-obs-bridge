@@ -7,6 +7,7 @@
 #include <windows.h>
 
 #include <QDir>
+#include <QFileInfo>
 #include <QHash>
 #include <QSettings>
 
@@ -41,26 +42,29 @@ QString translated_or(const char *key, const QString &fallback)
 
 QString obs_language()
 {
-	using LocaleStringFunction = const char *(*)(const char *);
-	const HMODULE frontend = GetModuleHandleW(L"obs-frontend-api.dll");
-	const auto get_locale_string = frontend ? reinterpret_cast<LocaleStringFunction>(
-		GetProcAddress(frontend, "obs_frontend_get_locale_string")) : nullptr;
-	if (!get_locale_string)
-		return {};
-
-	// OBS does not expose its selected locale directly. A stable built-in label
-	// distinguishes the only additional locale currently shipped by this plugin.
-	const char *untitled = get_locale_string("Untitled");
-	return untitled && QString::fromUtf8(untitled) == QStringLiteral("Unbenannt")
-		? QStringLiteral("de-DE") : QStringLiteral("en-US");
+	using GetLocaleFunction = const char *(*)();
+	const HMODULE libobs = GetModuleHandleW(L"obs.dll");
+	const auto get_locale = libobs ? reinterpret_cast<GetLocaleFunction>(
+		GetProcAddress(libobs, "obs_get_locale")) : nullptr;
+	const char *locale = get_locale ? get_locale() : nullptr;
+	return locale ? QString::fromUtf8(locale) : QStringLiteral("en-US");
 }
 
 void load_translations()
 {
 	translations.clear();
-	const QString locale = obs_language().startsWith(QStringLiteral("de"), Qt::CaseInsensitive)
-		? QStringLiteral("de-DE") : QStringLiteral("en-US");
-	QSettings settings(QDir(module_locale_directory()).filePath(locale + QStringLiteral(".ini")),
+	const QDir locale_directory(module_locale_directory());
+	QString locale = obs_language();
+	QString locale_path = locale_directory.filePath(locale + QStringLiteral(".ini"));
+	if (!QFileInfo::exists(locale_path)) {
+		const QString language = locale.section('-', 0, 0);
+		const QString language_path = locale_directory.filePath(language + QStringLiteral(".ini"));
+		locale_path = QFileInfo::exists(language_path)
+			? language_path
+			: locale_directory.filePath(QStringLiteral("en-US.ini"));
+	}
+
+	QSettings settings(locale_path,
 		QSettings::IniFormat);
 	for (const QString &key : settings.allKeys())
 		translations.insert(key, settings.value(key).toString());

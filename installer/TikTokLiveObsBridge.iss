@@ -62,14 +62,12 @@ german.ContinueUninstall=Deinstallation fortsetzen
 
 [Files]
 Source: "{#SourceRoot}\dist\{#PluginModule}.dll"; DestDir: "{app}\obs-plugins\64bit"; Flags: ignoreversion
-Source: "{#SourceRoot}\data\locale\de-DE.ini"; DestDir: "{app}\data\obs-plugins\{#PluginModule}\locale"; Flags: ignoreversion
-Source: "{#SourceRoot}\data\locale\en-US.ini"; DestDir: "{app}\data\obs-plugins\{#PluginModule}\locale"; Flags: ignoreversion
+Source: "{#SourceRoot}\data\locale\*.ini"; DestDir: "{app}\data\obs-plugins\{#PluginModule}\locale"; Flags: ignoreversion
 Source: "{#SourceRoot}\LICENSE"; DestDir: "{app}\data\obs-plugins\{#PluginModule}"; Flags: ignoreversion
 
 [UninstallDelete]
 Type: files; Name: "{app}\obs-plugins\64bit\{#PluginModule}.dll"
-Type: files; Name: "{app}\data\obs-plugins\{#PluginModule}\locale\de-DE.ini"
-Type: files; Name: "{app}\data\obs-plugins\{#PluginModule}\locale\en-US.ini"
+Type: filesandordirs; Name: "{app}\data\obs-plugins\{#PluginModule}\locale"
 Type: files; Name: "{app}\data\obs-plugins\{#PluginModule}\LICENSE"
 
 [Code]

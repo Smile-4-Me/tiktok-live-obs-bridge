@@ -6,6 +6,7 @@
 #include <QString>
 
 // Loads the plugin-owned locale file selected from OBS' active UI language.
+// English is used when no matching translation is bundled.
 void load_translations();
 QString text(const char *key);
 QString translated_or(const char *key, const QString &fallback);
