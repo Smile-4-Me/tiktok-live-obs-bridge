@@ -4,7 +4,7 @@
 
 ![Windows](https://img.shields.io/badge/platform-Windows%2010%20%2F%2011-0078D4?logo=windows&logoColor=white)
 ![License](https://img.shields.io/badge/license-GPL--3.0--only-3DA639)
-![Status](https://img.shields.io/badge/status-v1.0.1-5865F2)
+![Status](https://img.shields.io/badge/status-v1.0.0-5865F2)
 
 TikTok Live OBS Bridge was built because repeatedly opening a separate tool, copying a stream URL and key, and pasting both into an OBS setup is tedious. It keeps that workflow close to OBS while leaving the streamer in control.
 
@@ -55,6 +55,8 @@ It is a community project, not a company product. Please read the information be
 
 ✓ Recovers cautiously after OBS is closed during a LIVE session.
 
+✓ Uses OBS' selected language and includes 17 localized dock interfaces: Arabic, Brazilian Portuguese, Chinese (Simplified and Traditional), English, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Russian, Spanish, Thai, Turkish, and Vietnamese.
+
 ## Important boundaries
 
 - **Windows only for v1.0.0.** macOS and Linux are not supported yet; see [PLATFORM_SUPPORT.md](PLATFORM_SUPPORT.md).
@@ -65,7 +67,7 @@ It is a community project, not a company product. Please read the information be
 
 ## Installation
 
-1. Download the latest `TikTok-Live-OBS-Bridge-Setup-*.exe` from the release you trust.
+1. Download `TikTok-Live-OBS-Bridge-Setup-1.0.0.exe` from the release you trust.
 2. Run the installer as administrator.
 3. Select the root folder of the OBS installation you want to extend. Portable OBS installations are supported.
 4. Restart OBS Studio.

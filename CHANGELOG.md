@@ -2,16 +2,6 @@
 
 All notable changes are documented here. This project follows the spirit of [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and uses semantic versioning where practical.
 
-## [1.0.1] - 2026-08-17
-
-### Added
-
-- Full Turkish dock translation.
-
-### Fixed
-
-- The dock now reads OBS' active locale directly, allowing every bundled translation to be selected correctly.
-
 ## [1.0.0] - 2026-08-16
 
 ### Added
@@ -23,7 +13,7 @@ All notable changes are documented here. This project follows the spirit of [Kee
 - Manual mode for users who do not use Aitum.
 - Output and TikTok-account reservation rules to prevent conflicting concurrent sessions.
 - Session reconciliation after OBS closes during a LIVE session.
-- German and English dock UI; English is the fallback for other OBS languages.
+- OBS language detection with localized dock UI for Arabic, Brazilian Portuguese, Chinese (Simplified and Traditional), English, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Russian, Spanish, Thai, Turkish, and Vietnamese. English is the fallback for other OBS languages.
 - Windows installer with selectable OBS root folder, portable OBS support, instance-specific uninstall entries, configuration retention option, and license page.
 - Per-OBS-installation configuration scoping and migration from earlier local configuration names.
 

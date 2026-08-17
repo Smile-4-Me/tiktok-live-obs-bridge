@@ -54,6 +54,11 @@ void load_translations()
 {
 	translations.clear();
 	const QDir locale_directory(module_locale_directory());
+	QSettings english_settings(locale_directory.filePath(QStringLiteral("en-US.ini")),
+		QSettings::IniFormat);
+	for (const QString &key : english_settings.allKeys())
+		translations.insert(key, english_settings.value(key).toString());
+
 	QString locale = obs_language();
 	QString locale_path = locale_directory.filePath(locale + QStringLiteral(".ini"));
 	if (!QFileInfo::exists(locale_path)) {
@@ -64,8 +69,10 @@ void load_translations()
 			: locale_directory.filePath(QStringLiteral("en-US.ini"));
 	}
 
-	QSettings settings(locale_path,
-		QSettings::IniFormat);
+	if (locale_path.endsWith(QStringLiteral("en-US.ini"), Qt::CaseInsensitive))
+		return;
+
+	QSettings settings(locale_path, QSettings::IniFormat);
 	for (const QString &key : settings.allKeys())
 		translations.insert(key, settings.value(key).toString());
 }

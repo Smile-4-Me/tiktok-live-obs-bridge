@@ -3,7 +3,7 @@
 ;   ISCC.exe installer\TikTokLiveObsBridge.iss
 
 #define AppName "TikTok Live OBS Bridge"
-#define AppVersion "1.0.1"
+#define AppVersion "1.0.0"
 #define AppPublisher "TikTok Live OBS Bridge Contributors"
 #define PluginModule "tiktok-live-obs-bridge"
 #define SourceRoot ".."
