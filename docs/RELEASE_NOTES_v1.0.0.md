@@ -12,7 +12,7 @@ TikTok Live OBS Bridge brings the TikTok LIVE session workflow into an OBS dock.
 - Manual mode for streaming workflows without Aitum.
 - Protection against output and TikTok-account conflicts across profiles.
 - Output-start verification and cautious session recovery after OBS closes unexpectedly.
-- English and German dock UI.
+- Localized dock UI: English, German, Spanish, French, Italian, Brazilian Portuguese, Russian, and Japanese. Other OBS languages fall back to English.
 - Windows installer with regular and portable OBS support.
 
 ### Requirements
