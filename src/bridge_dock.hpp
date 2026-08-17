@@ -20,6 +20,7 @@ class QFormLayout;
 class QLayout;
 class QLabel;
 class QPushButton;
+class QScrollArea;
 class QWidget;
 class QVBoxLayout;
 
@@ -88,6 +89,7 @@ private:
 	void end_profile_live(const QString &profile_id);
 
 	QVBoxLayout *profile_list_layout_ = nullptr;
+	QScrollArea *profile_scroll_ = nullptr;
 	QPushButton *add_profile_button_ = nullptr;
 	QWidget *detail_container_ = nullptr;
 	QVBoxLayout *detail_layout_ = nullptr;

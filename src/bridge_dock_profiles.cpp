@@ -25,6 +25,7 @@
 #include <QUuid>
 #include <QVBoxLayout>
 
+#include <algorithm>
 #include <thread>
 
 Profile BridgeDock::new_profile(const QString &name) const
@@ -64,12 +65,12 @@ void BridgeDock::build_ui()
 		profile_list_layout_ = new QVBoxLayout(profile_list_container);
 		profile_list_layout_->setContentsMargins(0, 0, 0, 0);
 		profile_list_layout_->setSpacing(2);
-		auto *profile_scroll = new QScrollArea(this);
-		profile_scroll->setWidget(profile_list_container);
-		profile_scroll->setWidgetResizable(true);
-		profile_scroll->setFrameShape(QFrame::NoFrame);
-		profile_scroll->setMaximumHeight(180);
-		layout->addWidget(profile_scroll);
+		profile_list_layout_->setAlignment(Qt::AlignTop);
+		profile_scroll_ = new QScrollArea(this);
+		profile_scroll_->setWidget(profile_list_container);
+		profile_scroll_->setWidgetResizable(true);
+		profile_scroll_->setFrameShape(QFrame::NoFrame);
+		layout->addWidget(profile_scroll_);
 
 		add_profile_button_ = new QPushButton(text("Profiles.Add"), this);
 		connect(add_profile_button_, &QPushButton::clicked, this, [this] {
@@ -103,8 +104,8 @@ void BridgeDock::clear_layout(QLayout *layout)
 	}
 
 void BridgeDock::rebuild_profile_list()
-	{
-		clear_layout(profile_list_layout_);
+{
+	clear_layout(profile_list_layout_);
 		for (int index = 0; index < static_cast<int>(profiles_.size()); ++index) {
 			auto *row = new ProfileRow(this);
 			row->set_profile(profiles_.at(index), index == selected_profile_);
@@ -121,8 +122,18 @@ void BridgeDock::rebuild_profile_list()
 				});
 			};
 			profile_list_layout_->addWidget(row);
-		}
 	}
+
+	// Use only the space needed for one to five profiles. A sixth profile keeps
+	// the compact five-row viewport and activates the scroll bar.
+	constexpr int visible_profile_rows = 5;
+	constexpr int list_spacing = 2;
+	const int displayed_rows = std::min(static_cast<int>(profiles_.size()), visible_profile_rows);
+	const int profile_list_height = displayed_rows > 0
+		? displayed_rows * ProfileRow::kHeight + (displayed_rows - 1) * list_spacing
+		: 0;
+	profile_scroll_->setFixedHeight(profile_list_height);
+}
 
 Profile *BridgeDock::selected_profile()
 	{

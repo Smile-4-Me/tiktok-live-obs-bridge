@@ -38,11 +38,13 @@ QString state_tooltip(ProfileState state)
 
 ProfileRow::ProfileRow(QWidget *parent) : QWidget(parent)
 {
+	setFixedHeight(kHeight);
 	auto *layout = new QHBoxLayout(this);
 	layout->setContentsMargins(8, 5, 8, 5);
 	layout->setSpacing(7);
 	button_ = new QPushButton(this);
 	button_->setFlat(true);
+	button_->setMinimumHeight(32);
 	layout->addWidget(button_, 1);
 	dot_ = new QLabel(this);
 	dot_->setFixedSize(14, 14);
