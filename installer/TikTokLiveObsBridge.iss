@@ -133,6 +133,16 @@ begin
     'tiktok-live-obs-bridge-' + PluginStorageId() + '.ini';
 end;
 
+procedure RemoveLegacyGlobalPlugin();
+begin
+  { Older development installers used OBS' machine-wide ProgramData plugin
+    location. OBS scans it in addition to the selected installation, which can
+    create a duplicate module load. The current installer always uses the
+    selected OBS installation folder. }
+  DelTree(ExpandConstant('{commonappdata}\obs-studio\plugins\{#PluginModule}'),
+    True, True, True);
+end;
+
 procedure DeleteStoredCredential(const TargetName: String);
 var
   ExitCode: Integer;
@@ -264,6 +274,12 @@ begin
     WizardForm.FinishedLabel.Caption := CustomMessage('FinishedInstruction');
 end;
 
+procedure CurStepChanged(CurStep: TSetupStep);
+begin
+  if CurStep = ssInstall then
+    RemoveLegacyGlobalPlugin();
+end;
+
 function InitializeUninstall(): Boolean;
 begin
   Result := AskToKeepPluginConfiguration();
@@ -271,6 +287,9 @@ end;
 
 procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
 begin
+  if CurUninstallStep = usUninstall then
+    RemoveLegacyGlobalPlugin();
+
   if (CurUninstallStep = usPostUninstall) and not KeepPluginConfiguration then
     DeletePluginConfiguration();
 end;
